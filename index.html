@@ -123,7 +123,7 @@
 
             <div class="flex flex-col w-11/12 mx-auto lg:flex-row gap-5">
                 <!-- categories section -->
-                 <div class="categories-section w-11/12 mx-auto md:w-[20vw] xl:w-[15vw] lg:h-[100vh] lg:sticky lg:top-0 lg:max-w-[250px] my-10 rounded-[16px] p-4 bg-white">
+                 <div class="categories-section w-11/12 mx-auto lg:w-[20vw] xl:w-[15vw] lg:h-[100vh] lg:sticky lg:top-0 lg:max-w-[250px] my-10 rounded-[16px] p-4 bg-white">
                     <h2 class="font-semibold text-[22px]">Categories</h2>
                     <div class="categories-container flex flex-col gap-1 max-w-[250px] mx-auto my-5" id="categories-container">
                                 <!-- <div class="bg-[#15803D] text-white py-2 px-2.5 rounded-sm">All Trees</div>
@@ -136,7 +136,7 @@
                 <!-- product section -->
                 <div id="card-container"
                     class="card-container hidden w-11/12 mx-auto gap-5 grid-cols-1 my-10 md:grid-cols-2 xl:grid-cols-3">
-                    <div class="tree-card bg-white p-4  rounded-lg">
+                    <!-- <div class="tree-card bg-white p-4  rounded-lg">
                         <img src="assets/rect.png" alt class="w-full mb-2">
                         <h2 class="tree-name font-semibold text-lg my-2">Mango
                             Tree</h2>
@@ -152,7 +152,7 @@
                         <button
                             class="btn primary-btn w-full !bg-[#15803D] !text-white !py-5 my-2 !rounded-full">Add
                             to Cart</button>
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -163,9 +163,9 @@
                 </div>
 
                 <!-- cart section -->
-                <div class="cart-section w-11/12 mx-auto md:w-[20vw] xl:w-[15vw] lg:h-[100vh] lg:sticky lg:top-0 lg:max-w-[250px] my-10 rounded-[16px] p-4 bg-white">
+                <div class="cart-section w-11/12 mx-auto lg:w-[20vw] xl:w-[15vw] lg:h-[100vh] lg:sticky lg:top-0 lg:max-w-[250px] my-10 rounded-[16px] p-4 bg-white">
                     <h2 class="font-semibold text-[22px]">Your Cart</h2>
-                    <div id="cart-item-container" class="cart-item-container flex flex-col gap-2 mt-3 border-b pb-2.5 border-[#1F2937]/10">
+                    <div id="cart-item-container" class="cart-item-container lg:overflow-y-auto lg:max-h-[80vh] flex flex-col gap-2 mt-3 border-b pb-2.5 border-[#1F2937]/10">
                         <!-- <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
                             <div>
                                 <h1 class="font-semibold">Guava Tree</h1>
@@ -289,8 +289,7 @@
         </dialog>
 
         <!-- cart modal -->
-        <!-- You can open the modal using ID.showModal() method -->
-<dialog id="cart_modal" class="modal  modal-bottom sm:modal-middle">
+        <dialog id="cart_modal" class="modal  modal-bottom sm:modal-middle">
   <div class="modal-box">
     <form method="dialog">
       <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -314,7 +313,7 @@
                     </div>
     </section>
   </div>
-</dialog>
+        </dialog>
 
         <!-- script -->
         <script src="js/main.js"></script>

@@ -19,7 +19,7 @@ const displayAllPlant= plants => {
     plants.forEach(element => {
         const item = document.createElement('div');
         item.innerHTML = `
-        <div class="tree-card flex flex-col bg-white p-4 h-full rounded-lg">
+        <div class="tree-card flex flex-col bg-white p-4 max-h-[450px] h-full rounded-lg">
                         <img src="${element.image}" loading="lazy" alt="${element.name}" class="w-full mb-2 h-[200px] object-cover rounded-lg">
                         <h2 onclick="showTreeDatail(${element.id})" class="tree-name font-semibold text-lg my-2 cursor-pointer">${element.name}</h2>
                         <p class="text-sm text-[#1F2937] line-clamp-3">${element.description}</p>
