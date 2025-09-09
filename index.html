@@ -1,37 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Earth Tree Shop</title>
-    <!-- font css -->
-    <link rel="stylesheet" href="styles/font.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Green Earth Tree Shop</title>
+        <!-- font css -->
+        <link rel="stylesheet" href="styles/font.css">
 
-    <!-- tailwind css cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- tailwind css cdn -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- daisy ui cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        <!-- daisy ui cdn -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet"
+            type="text/css" />
 
-    <!-- font awesome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <!-- header -->
-    <header>
-        <nav></nav>
-        <section class="banner-section">
+        <!-- font awesome cdn -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body class="inter-regular">
+        <!-- header -->
+        <header class="max-w-[1920px] mx-auto">
+            <!-- navbar -->
+            <nav>
+                <div class="navbar lg:!px-10 2xl:px-16 bg-[#15803D] shadow-sm">
+                    <div class="navbar-start">
+                        <div class="dropdown lg:!hidden text-white">
+                            <div tabindex="0" role="button"
+                                class="btn btn-ghost lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                            </div>
+                            <ul
+                                tabindex="0"
+                                class="menu menu-md dropdown-content flex justify-center items-center gap-1 flex-col bg-base-100 rounded-box z-1 mt-3 ml-[-10px] !w-[100vw] shadow text-black">
+                                <li class="w-full"><a class="btn outline-0 py-4 px-5 text-medium !border-0">About</a></li>                                
+                                <li class="w-full"><a class="btn outline-0 py-4 px-5 text-medium !border-0">Gallery</a></li>                                
+                                <li class="w-full"><a class="btn !bg-[#FACC15] mt-2 !outline-0 !py-4 !px-5 !text-medium !border-0 !text-[#15803D]">Plant a Tree</a></li>
 
-        </section>
-    </header>
+                            </ul>
+                        </div>
+                        <a class="!text-xl !text-white font-semibold cursor-pointer">Green Earth</a>
+                    </div>
+                    <div class="navbar-center !hidden lg:!flex">
+                        <ul class="menu menu-horizontal px-1 text-white font-medium">
+                            <li><a>About</a></li>                                
+                            <li><a>Gallery</a></li>                                
+                            <li><a>Plant a Tree</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="navbar-end flex items-center justify-center gap-2">
+                        <a class="btn !bg-[#FACC15] !hidden md:!flex !rounded-full !outline-0 !py-4 !px-5 !text-medium !border-0 !text-[#15803D]">Plant a Tree</a>
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle mr-3 hover:!bg-transparent lg:!hidden">
+                            <div class="indicator">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> </svg>
+                                <span class="badge badge-sm indicator-item">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
-    <!-- main -->
-     <main></main>
+            <section class="banner-section">
 
-    <!-- footer section -->
-    <footer></footer>
-    
-    <!-- script -->
-    <script src="js/main.js"></script>
-</body>
+            </section>
+        </header>
+
+        <!-- main -->
+        <main></main>
+
+        <!-- footer section -->
+        <footer></footer>
+
+        <!-- script -->
+        <script src="js/main.js"></script>
+    </body>
 </html>
