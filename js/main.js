@@ -58,4 +58,47 @@ const showTreeDatail = async(id) => {
 
 //end modal data //
 
+// categories //
+
+const loadCategories = () => {
+    const url = `https://openapi.programming-hero.com/api/categories`;
+
+    fetch(url).then(res => res.json()).then(data => showCategories(data.categories));
+}
+
+const showCategories = (categories) => {
+    const categoryContainer = document.getElementById('categories-container');
+    categoryContainer.innerHTML = `<div onclick="changeBtnState('categories-btn-all'); loadAllPlant();" id="categories-btn-all" class="bg-[#15803D] categories-btn cursor-pointer text-white py-2 px-2.5 rounded-sm">All Trees</div>`;
+    
+    categories.forEach(element => {
+        const item = document.createElement('div');
+        item.innerHTML = `<div onclick="loadByCategory(${element.id})" id="categories-btn-${element.id}" class="categories-btn py-2 px-2.5 cursor-pointer rounded-sm hover:bg-[#CFF0DC]">${element.category_name}</div>`;
+        categoryContainer.appendChild(item);
+    });
+
+}
+
+const loadByCategory = (id) => {
+    changeBtnState(`categories-btn-${id}`);
+    const url = `https://openapi.programming-hero.com/api/category/${id}`;
+    fetch(url).then(res => res.json()).then(data => displayAllPlant(data.plants));
+}
+
+const changeBtnState = (id) => {
+    const categoryBtn = document.querySelectorAll('.categories-btn');
+
+    categoryBtn.forEach(element => {
+        element.classList.remove('bg-[#15803D]', 'text-white');
+        element.classList.add('hover:bg-[#CFF0DC]');
+    });
+    const btn = document.getElementById(id);
+    btn.classList.add('bg-[#15803D]', 'text-white');
+    btn.classList.remove('hover:bg-[#CFF0DC]');
+}
+
+// end categories //
+
+
+
+loadCategories();
 loadAllPlant();
