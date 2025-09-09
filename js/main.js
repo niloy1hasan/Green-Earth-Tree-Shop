@@ -1,3 +1,7 @@
+// product data //
+const cartProduct = [];
+// product data //
+
 // all plant //
 const loadAllPlant = async() => {
     manageSpinner(true);
@@ -23,7 +27,7 @@ const displayAllPlant= plants => {
                             <div class="badge !rounded-full !bg-[#DCFCE7] font-medium !py-3 !px-4 !text-[#15803D]">${element.category}</div>
                             <h1 class="font-semibold text-[16px]">৳${element.price}</h1>
                         </div>
-                        <button class="btn primary-btn w-full !bg-[#15803D] !text-white !py-5 my-2 !rounded-full">Add to Cart</button>
+                        <button onclick="addToCart({id : ${element.id},name : '${element.name}',price : ${element.price}})" class="btn primary-btn w-full !bg-[#15803D] !text-white !py-5 my-2 !rounded-full">Add to Cart</button>
                     </div>
 
         `;
@@ -121,6 +125,47 @@ const manageSpinner = (status) =>{
 }
 
 // end spinner //
+
+// add to cart btn //
+const addToCart = (data) => {
+    const found = cartProduct.find(item => item.id === data.id);
+    if(found){
+        found.quantity++;
+    } else {
+        cartProduct.push({...data, quantity : 1});
+        document.getElementById('product-amount-badge').innerText = cartProduct.length.toString();
+    }
+
+    updateCart();
+}
+
+const updateCart = () => {
+    const container = document.getElementById('cart-item-container');
+    container.innerHTML = "";
+
+    let total = 0;
+
+    cartProduct.forEach(element => {
+        total += element.price * element.quantity;
+        const item = document.createElement('div');
+        item.innerHTML = `
+        <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
+                            <div>
+                                <h1 class="font-semibold">${element.name}</h1>
+                                <p class="text-[#1F2937]/50">৳<span>${element.price}</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>${element.quantity}</span></p>
+                            </div>
+                            <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
+                        </div>
+        `;
+
+        container.appendChild(item);
+    });
+
+    document.getElementById('total-amount-id').innerText = total.toString();
+};
+
+
+// end add to cart btn //
 
 
 loadCategories();

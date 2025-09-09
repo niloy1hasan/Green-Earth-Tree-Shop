@@ -80,7 +80,7 @@
                                         d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
                                 <span
-                                    class="badge badge-sm indicator-item">0</span>
+                                    class="badge badge-sm indicator-item" id="product-amount-badge">0</span>
                             </div>
                         </div>
                     </div>
@@ -165,56 +165,19 @@
                 <!-- cart section -->
                 <div class="cart-section w-11/12 mx-auto md:w-[20vw] xl:w-[15vw] lg:h-[100vh] lg:sticky lg:top-0 lg:max-w-[250px] my-10 rounded-[16px] p-4 bg-white">
                     <h2 class="font-semibold text-[22px]">Your Cart</h2>
-                    <div class="cart-item-container flex flex-col gap-2 mt-3 border-b pb-2.5 border-[#1F2937]/10">
-                        <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
+                    <div id="cart-item-container" class="cart-item-container flex flex-col gap-2 mt-3 border-b pb-2.5 border-[#1F2937]/10">
+                        <!-- <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
                             <div>
                                 <h1 class="font-semibold">Guava Tree</h1>
                                 <p class="text-[#1F2937]/50">৳<span>500</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>1</span></p>
                             </div>
                             <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
-                        </div>
-                        <!-- temp -->
-                         <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
-                            <div>
-                                <h1 class="font-semibold">Guava Tree</h1>
-                                <p class="text-[#1F2937]/50">৳<span>500</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>1</span></p>
-                            </div>
-                            <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
-                        </div>
-                        <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
-                            <div>
-                                <h1 class="font-semibold">Guava Tree</h1>
-                                <p class="text-[#1F2937]/50">৳<span>500</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>1</span></p>
-                            </div>
-                            <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
-                        </div>
-                        <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
-                            <div>
-                                <h1 class="font-semibold">Guava Tree</h1>
-                                <p class="text-[#1F2937]/50">৳<span>500</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>1</span></p>
-                            </div>
-                            <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
-                        </div>
-                        <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
-                            <div>
-                                <h1 class="font-semibold">Guava Tree</h1>
-                                <p class="text-[#1F2937]/50">৳<span>500</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>1</span></p>
-                            </div>
-                            <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
-                        </div>
-                        <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
-                            <div>
-                                <h1 class="font-semibold">Guava Tree</h1>
-                                <p class="text-[#1F2937]/50">৳<span>500</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>1</span></p>
-                            </div>
-                            <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
-                        </div>
-                         <!-- end temp -->
+                        </div> -->
                     </div>
                     
                     <div class="flex font-medium text-[#1F2937]/80 mt-2 justify-between items-center">
                         <h2>Total:</h2>
-                        <h2>৳<span>1000</span></h2>
+                        <h2>৳<span id="total-amount-id">00</span></h2>
                     </div>
                 </div>
             </div>
