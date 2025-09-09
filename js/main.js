@@ -1,5 +1,6 @@
 // all plant //
 const loadAllPlant = async() => {
+    manageSpinner(true);
     const url = 'https://openapi.programming-hero.com/api/plants';
     const load = await fetch(url);
     const json = await load.json();
@@ -29,6 +30,8 @@ const displayAllPlant= plants => {
 
         cardContainer.appendChild(item);
     });
+
+    manageSpinner(false);
 }
 
 // end all plant //
@@ -79,6 +82,7 @@ const showCategories = (categories) => {
 }
 
 const loadByCategory = (id) => {
+    manageSpinner(true);
     changeBtnState(`categories-btn-${id}`);
     const url = `https://openapi.programming-hero.com/api/category/${id}`;
     fetch(url).then(res => res.json()).then(data => displayAllPlant(data.plants));
@@ -98,6 +102,25 @@ const changeBtnState = (id) => {
 
 // end categories //
 
+// spinner //
+
+const manageSpinner = (status) =>{
+  const spinner = document.getElementById('loading-spinner');
+  const cardContainer = document.getElementById('card-container');
+  if(status == true){
+    spinner.classList.remove('hidden');
+    cardContainer.classList.add('hidden');
+    cardContainer.classList.remove('grid');
+    spinner.classList.add('flex');
+  } else {
+    spinner.classList.remove('flex');
+    cardContainer.classList.remove('hidden');
+    cardContainer.classList.add('grid');
+    spinner.classList.add('hidden');
+  }
+}
+
+// end spinner //
 
 
 loadCategories();
