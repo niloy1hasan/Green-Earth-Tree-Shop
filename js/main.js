@@ -1,5 +1,5 @@
 // product data //
-const cartProduct = [];
+let cartProduct = [];
 // product data //
 
 // all plant //
@@ -154,7 +154,7 @@ const updateCart = () => {
                                 <h1 class="font-semibold">${element.name}</h1>
                                 <p class="text-[#1F2937]/50">৳<span>${element.price}</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>${element.quantity}</span></p>
                             </div>
-                            <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
+                            <div onclick="removeFromCart(event, ${element.id})" class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
                         </div>
         `;
 
@@ -163,6 +163,19 @@ const updateCart = () => {
 
     document.getElementById('total-amount-id').innerText = total.toString();
 };
+
+const removeFromCart = (event, id) => {
+   const item = event.target;
+   item.closest('.cart-item').remove();
+   const product = cartProduct.find(element => element.id === id);
+   
+   let currentPrice = parseInt(document.getElementById('total-amount-id').innerText);
+   currentPrice -= product.price * product.quantity;
+
+   document.getElementById('total-amount-id').innerText = currentPrice.toString();
+
+   cartProduct = cartProduct.filter(element => element.id!== id);
+}
 
 
 // end add to cart btn //
