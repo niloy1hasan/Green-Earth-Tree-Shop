@@ -161,24 +161,79 @@ const updateCart = () => {
         container.appendChild(item);
     });
 
+    document.getElementById('product-amount-badge').innerText = cartProduct.length.toString();
     document.getElementById('total-amount-id').innerText = total.toString();
 };
 
 const removeFromCart = (event, id) => {
    const item = event.target;
    item.closest('.cart-item').remove();
+
    const product = cartProduct.find(element => element.id === id);
    
    let currentPrice = parseInt(document.getElementById('total-amount-id').innerText);
    currentPrice -= product.price * product.quantity;
 
    document.getElementById('total-amount-id').innerText = currentPrice.toString();
+   document.getElementById('product-amount-badge').innerText = cartProduct.length.toString();
+
 
    cartProduct = cartProduct.filter(element => element.id!== id);
 }
 
 
 // end add to cart btn //
+
+// nav cart btn //
+
+const navCart = document.getElementById('nav-cart-btn');
+
+navCart.addEventListener('click', function(event){
+ showModalCart();
+
+});
+
+const showModalCart = () => {
+const container = document.getElementById('modal-cart-item-container');
+ container.innerHTML = "";
+
+  let total = 0;
+ cartProduct.forEach(element => {
+     total += element.price * element.quantity;
+     const item = document.createElement('div');
+    item.innerHTML = `
+    <div class="modal-cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
+                            <div>
+                                <h1 class="font-semibold">${element.name}</h1>
+                                <p class="text-[#1F2937]/50">৳<span>${element.price}</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>${element.quantity}</span></p>
+                            </div>
+                            <div onclick="removeFromModalCart(event, ${element.id})" class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
+                        </div>
+    `;
+    container.appendChild(item);
+ });
+document.getElementById('modal-amount-id').innerText = total.toString();
+ 
+ cart_modal.showModal();
+}
+
+const removeFromModalCart = (event, id) => {
+    const item = event.target;
+    item.closest('.modal-cart-item').remove();
+
+   const product = cartProduct.find(element => element.id === id);
+   
+   let currentPrice = parseInt(document.getElementById('modal-amount-id').innerText);
+   currentPrice -= product.price * product.quantity;
+
+   document.getElementById('modal-amount-id').innerText = currentPrice.toString();
+
+   cartProduct = cartProduct.filter(element => element.id!== id);
+   document.getElementById('product-amount-badge').innerText = cartProduct.length.toString();
+   updateCart();
+}
+
+// end nav cart btn //
 
 
 loadCategories();

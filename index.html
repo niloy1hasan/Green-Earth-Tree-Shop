@@ -69,7 +69,7 @@
                         <a
                             class="btn !bg-[#FACC15] !hidden md:!flex !rounded-full !outline-0 !py-4 !px-5 !text-medium !border-0 !text-[#15803D]">Plant
                             a Tree</a>
-                        <div tabindex="0" role="button"
+                        <div id="nav-cart-btn" tabindex="0" role="button"
                             class="btn btn-ghost btn-circle mr-3 hover:!bg-transparent lg:!hidden">
                             <div class="indicator">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -273,6 +273,7 @@
         </footer>
 
         <!-- modal -->
+        <!-- detail modal -->
         <dialog id="tree_modal" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
                 <div class="modal-content" id="modal-content">
@@ -286,6 +287,34 @@
                 </div>
             </div>
         </dialog>
+
+        <!-- cart modal -->
+        <!-- You can open the modal using ID.showModal() method -->
+<dialog id="cart_modal" class="modal  modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    </form>
+    <!--  -->
+    <section class="dialog-content">
+                    <h2 class="font-semibold text-[22px]">Your Cart</h2>
+                    <div id="modal-cart-item-container" class="modal-cart-item-container flex flex-col gap-2 mt-3 border-b pb-2.5 border-[#1F2937]/10">
+                        <!-- <div class="cart-item flex justify-between items-center bg-[#F0FDF4] py-2 px-3 rounded-lg">
+                            <div>
+                                <h1 class="font-semibold">Guava Tree</h1>
+                                <p class="text-[#1F2937]/50">৳<span>500</span> <i class="fa-solid fa-xmark text-[#1F2937]/30 font-thin text-sm"></i> <span>1</span></p>
+                            </div>
+                            <div class="cursor-pointer"><i class="fa-solid fa-xmark text-[#1F2937]/30"></i></div>
+                        </div> -->
+                    </div>
+                    
+                    <div class="flex font-medium text-[#1F2937]/80 mt-2 justify-between items-center">
+                        <h2>Total:</h2>
+                        <h2>৳<span id="modal-amount-id">00</span></h2>
+                    </div>
+    </section>
+  </div>
+</dialog>
 
         <!-- script -->
         <script src="js/main.js"></script>
